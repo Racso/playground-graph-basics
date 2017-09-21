@@ -126,14 +126,13 @@
       </data>
     </edge>
     <edge id="e5" source="n2" target="n2">
-      <data key="d9"/>
       <data key="d10">
         <y:PolyLineEdge>
           <y:Path sx="0.0" sy="0.0" tx="0.0" ty="0.0">
             <y:Point x="172.04799999999986" y="237.15999999999994"/>
           </y:Path>
           <y:LineStyle color="#6ECCA5" type="line" width="3.0"/>
-          <y:Arrows source="none" target="standard"/>
+          <y:Arrows source="none" target="none"/>
           <y:BendStyle smoothed="false"/>
         </y:PolyLineEdge>
       </data>
