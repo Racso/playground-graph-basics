@@ -1,9 +1,8 @@
-# Welcome!
 
-This short playground will give you some fundamentals about graph theory: What graphs, nodes and edges are, and how can they be used to model information and solve problems.
+We already know what graphs are. Now, let's see how can we represent graphs in ways other than drawing. This will be useful if we want to work with graphs with a computer.
 
-# Prerequisites
-* None.
+# The Adjacency Matrix
+
 
 # Graphs, nodes and edges
 
