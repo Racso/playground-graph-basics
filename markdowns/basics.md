@@ -49,7 +49,7 @@ Based on a graph, you can easily calculate things about the situation you're mod
 
 # Loops and parallel edges
 
-Our cities graph is a **simple graph**, as it doesn't have **"loops"** or **"parallel edges"**. Let's see what those are.
+Our cities graph is a **simple graph**, as it doesn't have **"loops"** or **"parallel edges"**. Let's see what those are. The following graph is **non-simple**:
 
 ![Non simple graph](nosimple.png "")
 
@@ -58,6 +58,16 @@ In this graph, there's an edge connecting node 2 with itself. That edge is a loo
 You can also see that nodes 1 and 3 are connected by two edges. Those edges are "parallel edges", or "multiple edges". In other words, several edges are **parallel edges** if they connect the same pair of nodes.
 
 Loops and parallel edges are useful for certain, specific applications. However, for lots of real life applications (probably most of them), you don't want to have loops or parallel edges in your graphs. Graphs without loops or parallel edges are called **simple graphs**.
+
+# The degree of a node
+The **degree** of a node is the amount of edges incident on it. "Edges incident on a node" are edges that connect that node with another one (or itself, in the case of a loop), or edges that "touch" that node.
+
+In a simple graph, the degree of a node is equal to the amount of neighbors it has. On the other hand, when a node has a loop, the loop adds 2 to the degree of the node.
+
+In our non-simple graph example above, the degrees of the nodes are the following:
+* deg(**1**) = 3
+* deg(**2**) = 3 (remember: the loop adds 2)
+* deg(**3**) = 2
 
 # Directed graphs
 
