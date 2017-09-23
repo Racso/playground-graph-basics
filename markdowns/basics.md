@@ -2,6 +2,8 @@
 
 This short playground will give you some fundamentals about graph theory: What graphs, nodes and edges are, and how can they be used to model information and solve problems.
 
+Want to help with more content or fixing a mistake? [Find this Playground in Github!](https://github.com/Racso/playground-NpnXDluI)
+
 # Prerequisites
 * None.
 
