@@ -21,7 +21,7 @@ def test_get_graph_info():
 
         graph = [[1,1],[2,2],[3,3],[3,3]]
         a,b,c = get_graph_info(graph)
-        assert a==4 and b==3 and c==True, "Failed on test #3."
+        assert a==4 and b==4 and c==True, "Failed on test #3."
 
         graph = [[1,2],[1,3],[1,4],[2,4],[3,4],[4,4]]
         a,b,c = get_graph_info(graph)
