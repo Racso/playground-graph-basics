@@ -62,6 +62,9 @@ As you may check, if a graph is undirected, its adjacency matrices are symmetric
 # Exercise
 The shown Python function is used for obtaining some information about a given graph. The graph is passed to the function as an adjacency list, and the function returns the maximum degree of a node of the graph, the amount of loops in the graph and a boolean indicating whether the graph has parallel edges or not.
 
-Fix the function so it returns the desired information.
+Fix the function so it returns the desired information. You may assume that the graph will at most have 5 nodes, numbered from 1 to 5.
 
 @[The shown function should return some information about a given graph. Fix it so it does it correctly.]({"stubs": ["graphs.py"], "command": "python3 test_graphs.py"})
+
+# Ending
+Congratulations! Now you have some fundamentals about graph theory. Now, you may learn more concepts abouth graphs, or start to learn some useful algorithms to apply them. The choice is yours!
