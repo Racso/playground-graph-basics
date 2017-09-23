@@ -1,79 +1,60 @@
 
 We already know what graphs are. Now, let's see how can we represent graphs in ways other than drawing. This will be useful if we want to work with graphs with a computer.
 
-# The Adjacency Matrix
+# Adjacency List
 
-
-# Graphs, nodes and edges
-
-Look at the following image:
+Remember our cities graph?
 
 ![Graph example](cities.png "")
 
-The image represents some Colombian cities: Cartagena, Bucaramanga, Medellín, Bogotá, and other. Each circle is a city. The lines connecting the circles represent commercial flights that you can take between cities. For example, you can fly from Bucaramanga (BUC) to Bogotá (BOG), as those cities are connected with a line, but you can't fly from Pasto (PAS) to Leticia (LET) because they aren't connected.
+Let's make a list of each node's neighbors:
 
-Easy, right? Well, that's a graph, and they are indeed easy to understand. **Graphs** are structures that allow us to model relationships between elements. In this case, we used a graph to model flight connections between cities.
+* CAR: MED, BUC
+* MED: CAR, BUC, BUE, ARM, BOG
+* BUC: CAR, MED, BOG, YOP
+* BUE: MED, CAL, PAS
+* ARM: MED, BOG, CAL
+* BOG: MED, BUC, YOP, ARM, CAL
+* YOP: BUC, ARM, BOG, LET
+* CAL: BUE, ARM, BOG, YOP, LET, PAS
+* PAS: BUE, CAL
+* LET: CAL, YOP
 
-Graphs are composed of two kind of elements:
-1. **Vertices or nodes**, which represent elements. In the image, the circles are the nodes, each node representing a city.
-2. **Edges**, which represent relations between elements. In the image, the lines are the edges, each edge representing a flight connection between cities.
+That's the **adjacency list** of the graph: a list of lists describing the neighbors of each node.
 
-Each edge connects exactly two nodes. This means that you'll never find and edge with one side pointing to nowhere.
-
-We say that two nodes are neighbors if there is an edge connecting them. In the example, Bucaramanga (BUC) and Bogotá (BOG) are neighbors, but Pasto (PAS) and Leticia (LET) are not neighbors.
-
-?[How many neighbors does node BUC have?]
--[ ] 3
--[ ] 6
--[x] 4
--[ ] 5
-
-A graph can be drawn in different ways without changing it at all. How and where you draw the nodes and edges of a graph doesn't matter; what matters is what nodes does the graph contain and how are they connected. For example, our cities graph can be redrawn in the following way, without changing it:
-
-![Graph example, drawn in another way](cities-2.png "")
-
-Based on a graph, you can easily calculate things about the situation you're modelling. For small graphs, you can make it by hand. For bigger graphs, you can code simple programs or use well-known algorithms to tackle the problem. Try solving the following questions about our cities graph:
-
-?[How many cities are there?]
--[x] 10
--[ ] 9
--[ ] 8
--[ ] 11
-
-?[If I want to fly from Cartagena (CAR) to Pasto (PAS), What's the MINIMUM amount of flights that I need to take?]
--[x] 3
--[ ] 2
--[ ] 4
--[ ] 5
-
-# Loops and parallel edges
-
-Our cities graph is a **simple graph**, as it doesn't have **"loops"** or **"parallel edges"**. Let's see what those are.
-
-![Non simple graph](nosimple.png "")
-
-In this graph, there's an edge connecting node 2 with itself. That edge is a loop. In other words, a **loop** is an edge that starts and finishes in the same node. That node is connected to itself, and therefore is its own neighbor.
-
-You can also see that nodes 1 and 3 are connected by two edges. Those edges are "parallel edges", or "multiple edges". In other words, several edges are **parallel edges** if they connect the same pair of nodes.
-
-Loops and parallel edges are useful for certain, specific applications. However, for lots of real life applications (probably most of them), you don't want to have loops or parallel edges in your graphs. Graphs without loops or parallel edges are called **simple graphs**.
-
-# Directed graphs
-
-Let's suppose we want to model some Twitter users with a graph. This is the information about the users:
-
-- Alice (A) follows Bob and Carol.
-- Bob (B) follows Alice.
-- Carol (C) follows Bob.
-
-OK, cool. We can model people as nodes and "follows" as edges. However, this time we have an extra ingredient: direction.
-
-In Twitter, following a person goes in one direction: you may follow one person, but that person may or may not follow you back. In our example, Carol follows Bob, but Bob doesn't follow Carol back. Something similar happens with personal relationships in real life: you may like a person, but that person may or may not like you back.
-
-Is because of this asymmetry that our graph needs a way to convey who follows whom. This is done with **directed edges**:
+If the graph is directed, a node B only appears in the list of a node A if there's an edge from A to B. For example, in our directed graph example:
 
 ![Directed graph example](twitter.png "")
 
-Directed edges look like arrows. They have a starting node and an ending node.
+* A: B, C
+* B: A
+* C: B
 
-Our directed graph easily shows us some information about our users. For example, it's clear that Alice and Bob follow each other, and that Bob is the person with the most followers (because two arrows point to B).
+# Adjacency Matrix
+
+Graphs can also be represented with **adjacency matrices**, which are matrices  Here's the adjacency matrix of our cities graph:
+
+|	|CAR	|BUC	|YOP	|BOG	|LET	|CAL	|ARM	|MED	|BUE	|PAS    |
+|---	|---	|---	|---	|---	|---	|---	|---	|---	|---	|---    |
+|**CAR**|0	|1	|0	|0	|0	|0	|0	|1	|0	|0      |
+|**BUC**|1	|0	|1	|1	|0	|0	|0	|1	|0	|0      |
+|**YOP**|0	|1	|0	|1	|1	|1	|1	|0	|0	|0      |
+|**BOG**|0	|1	|1	|0	|0	|1	|1	|1	|0	|0      |
+|**LET**|0	|0	|1	|0	|0	|1	|0	|0	|0	|0      |
+|**CAL**|0	|0	|1	|1	|1	|0	|1	|0	|1	|1      |
+|**ARM**|0	|0	|1	|1	|0	|1	|0	|1	|0	|0      |
+|**MED**|1	|1	|0	|1	|0	|0	|1	|0	|1	|0      |
+|**BUE**|0	|0	|0	|0	|0	|1	|0	|1	|0	|1      |
+|**PAS**|0	|0	|0	|0	|0	|1	|0	|0	|1	|0      |
+
+Adjacency matrices have the graph nodes in both their rows and columns. A cell represents if there exists an edge between the pair of nodes of the corresponding row and column. For example, the cell in row **BOG** and column **BUC** has a value of **1** because there is an edge between BOG and BUC, whereas the cell in row **PAS** and column **YOP** has a **0** because there's no edge between those two nodes.
+
+A graph may have several adjacency matrices. In the example above, if you put the nodes in a different order in rows and columns, you'll have a new adjacency matrix of the same graph.
+
+As you may check, if a graph is undirected, its adjacency matrices are simmetrical. On the other side, if the graph is directed, the matrices are not simmetrical, as a 1 only appears in a cell if there's an edge from the node of the row to the node of the column. For example, the following is the adjacency matrix of our Twitter graph:
+
+|   | A | B | C |
+|---|---|---|---|
+|**A**|0|1|1|
+|**B**|1|0|0|
+|**C**|0|1|0|
