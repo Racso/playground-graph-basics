@@ -60,6 +60,8 @@ As you may check, if a graph is undirected, its adjacency matrices are symmetric
 |**C**|0|1|0|
 
 # Exercise
-The shown Python function is used during step 2 in the algorithm. It selects the node that should be set as current node. Fix it so it picks the correct node.
+The shown Python function is used for obtaining some information about a given graph. The graph is passed to the function as an adjacency list, and the function returns the maximum degree of a node of the graph, the amount of loops in the graph and a boolean indicating whether the graph has parallel edges or not.
 
-@[The shown function should select a new current node for Dijkstra's Algorithm. Fix it so it does it correctly.]({"stubs": ["nodes.py"], "command": "python3 test_nodes.py"})
+Fix the function so it returns the desired information.
+
+@[The shown function should return some information about a given graph. Fix it so it does it correctly.]({"stubs": ["graphs.py"], "command": "python3 test_graphs.py"})
