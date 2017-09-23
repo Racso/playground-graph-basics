@@ -37,4 +37,4 @@ def test_get_graph_info():
         send_msg("Hint 💡", "The graph is undirected, so an edge from A to B and an edge from B to A are parallel.")
 
 if __name__ == "__main__":
-    test_set_current_node()
+    test_get_graph_info()
