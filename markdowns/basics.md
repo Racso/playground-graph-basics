@@ -13,15 +13,15 @@ Look at the following image:
 
 ![Graph example](cities.png "")
 
-The image represents some Colombian cities: Cartagena, Bucaramanga, Medellín, Bogotá, and other. Each circle is a city. The lines connecting the circles represent commercial flights that you can take between cities. For example, you can fly from Bucaramanga (BUC) to Bogotá (BOG), as those cities are connected with a line, but you can't fly from Pasto (PAS) to Leticia (LET) because they aren't connected.
+The image represents some Colombian cities: Cartagena, Bucaramanga, Medellín, Bogotá, among others. Each circle is a city. The lines connecting the circles represent commercial flights that you can take between cities. For example, you can fly from Bucaramanga (BUC) to Bogotá (BOG), as those cities are connected with a line, but you can't fly from Pasto (PAS) to Leticia (LET) because they aren't connected.
 
 Easy, right? Well, that's a graph, and they are indeed easy to understand. **Graphs** are structures that allow us to model relationships between elements. In this case, we used a graph to model flight connections between cities.
 
 Graphs are composed of two kind of elements:
 1. **Vertices or nodes**, which represent elements. In the image, the circles are the nodes, each node representing a city.
-2. **Edges**, which represent relations between elements. In the image, the lines are the edges, each edge representing a flight connection between cities.
+2. **Edges**, which represent relationships between elements. In the image, the lines are the edges, each edge representing a flight connection between cities.
 
-Each edge connects exactly two nodes. This means that you'll never find and edge with one side pointing to nowhere.
+Each edge connects exactly two nodes. This means that you'll never find an edge with one side pointing to nowhere.
 
 We say that two nodes are neighbors if there is an edge connecting them. In the example, Bucaramanga (BUC) and Bogotá (BOG) are neighbors, but Pasto (PAS) and Leticia (LET) are not neighbors.
 
@@ -83,7 +83,7 @@ OK, cool. We can model people as nodes and "follows" as edges. However, this tim
 
 In Twitter, following a person goes in one direction: you may follow one person, but that person may or may not follow you back. In our example, Carol follows Bob, but Bob doesn't follow Carol back. Something similar happens with personal relationships in real life: you may like a person, but that person may or may not like you back.
 
-Is because of this asymmetry that our graph needs a way to convey who follows whom. This is done with **directed edges**:
+It is because of this asymmetry that our graph needs a way to convey who follows whom. This is done with **directed edges**:
 
 ![Directed graph example](twitter.png "")
 
