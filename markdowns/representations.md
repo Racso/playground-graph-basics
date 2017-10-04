@@ -51,7 +51,7 @@ Adjacency matrices have the graph nodes in both their rows and columns. The valu
 
 A graph may have several adjacency matrices. In the example above, if you put the nodes in a different order, you'll have a new adjacency matrix of the same graph.
 
-As you may check, if a graph is undirected, its adjacency matrices are symmetrical. On the other side, if the graph is directed, the matrices are not symmetrical, as a 1 only appears in a cell if there's an edge from the node of the row to the node of the column. For example, the following is the adjacency matrix of our Twitter graph:
+As you can see, if a graph is undirected, its adjacency matrices are symmetrical. On the other hand, if the graph is directed, the matrices are not symmetrical, as a 1 only appears in a cell if there's an edge from the node of the row to the node of the column. For example, the following is the adjacency matrix of our Twitter graph:
 
 |   | A | B | C |
 |---|---|---|---|
