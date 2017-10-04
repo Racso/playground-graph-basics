@@ -87,6 +87,6 @@ It is because of this asymmetry that our graph needs a way to convey who follows
 
 ![Directed graph example](twitter.png "")
 
-Directed edges look like arrows. They have a starting node and an ending node.
+Directed edges look like arrows. They have a starting node and an ending node. A graph with directed edges is called a **directed graph**.
 
 Our directed graph easily shows us some information about our users. For example, it's clear that Alice and Bob follow each other, and that Bob is the person with the most followers (because two arrows point to B).
